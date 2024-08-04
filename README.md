@@ -9,7 +9,7 @@
    - [计费说明](/buy/charge.md)
    - [配置变更](/buy/configuration.md)
    - [续费](/buy/renew.md)
-   - [退费](/buy/refund)
+   - [退费](/buy/refund.md)
 - 快速上手
    - [购买镜像](/fast/purchaseimage.md)
 - 操作指南
