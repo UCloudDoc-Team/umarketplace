@@ -1,24 +1,18 @@
-<!-- 请勿添加产品标题，标题行将由系统自动增加，名称将于您申请邮件提供的仓库名称一致 -->
-
-* [概览](/仓库名称/README.md)
-* 产品介绍   <!-- 以下是参考的目录模版，旨在建议产品文档应该包含的内容模块。实际章节划分可根据实际内容进行调整 -->
-   * [什么是云主机](相对链接)
-   * [功能与优势](相对链接)
-   * [应用场景](相对链接)
-* 计费
-   * [计费模式](相对链接)
-   * [定价表](相对链接)
-   * [配置变更](相对链接)
-   * [续费](相对链接)
-   * [退款](相对链接)
-* 注意事项与使用限制
-   * [注意事项描述](相对链接)
-* 创建第一台云主机
-   * [创建资源](相对链接)
-* 操作指南
-   * [创建](相对链接)
-   * [管理](相对链接)
-* 常见问题
-   * 场景相关 <!-- 平台已支持三级及以下目录收起展开，为确保点击区域充分，包含三级目录的二级标题请勿添加链接 -->
-      * [问题描述](相对链接)
-* [词汇表](/仓库名称/_glossary.md)
+- [概览](https://github.com/UCloudDoc-Team/umarketplace/README.md)
+- 产品动态
+- 产品简介
+   - [什么是云市场](https://github.com/UCloudDoc-Team/umarketplace/introduction/concept.md)
+   - [基础概念](https://github.com/UCloudDoc-Team/umarketplace/introduction/glossary.md)
+   - [产品优势](https://github.com/UCloudDoc-Team/umarketplace/introduction/adwantages.md)
+   - [商品列表](https://github.com/UCloudDoc-Team/umarketplace/introduction/product_list.md)
+- 产品价格
+   - [计费说明](https://github.com/UCloudDoc-Team/umarketplace/buy/charge.md)
+   - [配置变更](https://github.com/UCloudDoc-Team/umarketplace/buy/configuration.md)
+   - [续费](https://github.com/UCloudDoc-Team/umarketplace/buy/renew.md)
+   - [退费](https://github.com/UCloudDoc-Team/umarketplace/buy/refund)
+- 快速上手
+   - [购买镜像](https://github.com/UCloudDoc-Team/umarketplace/fast/purchaseimage.md)
+- 操作指南
+   - [买家相关](https://github.com/UCloudDoc-Team/umarketplace/fast/buyerinfo.md)
+   - [服务商相关](https://github.com/UCloudDoc-Team/umarketplace/fast/sellerinfo.md)
+- [FAQ](https://github.com/UCloudDoc-Team/umarketplace/support/faqs.md)
