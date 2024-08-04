@@ -1,18 +1,18 @@
-- [概览](https://github.com/UCloudDoc-Team/umarketplace/README.md)
+- [概览](/README.md)
 - 产品动态
 - 产品简介
-   - [什么是云市场](https://github.com/UCloudDoc-Team/umarketplace/introduction/concept.md)
-   - [基础概念](https://github.com/UCloudDoc-Team/umarketplace/introduction/glossary.md)
-   - [产品优势](https://github.com/UCloudDoc-Team/umarketplace/introduction/adwantages.md)
-   - [商品列表](https://github.com/UCloudDoc-Team/umarketplace/introduction/product_list.md)
+   - [什么是云市场](/introduction/concept.md)
+   - [基础概念](/introduction/glossary.md)
+   - [产品优势](/introduction/adwantages.md)
+   - [商品列表](/introduction/product_list.md)
 - 产品价格
-   - [计费说明](https://github.com/UCloudDoc-Team/umarketplace/buy/charge.md)
-   - [配置变更](https://github.com/UCloudDoc-Team/umarketplace/buy/configuration.md)
-   - [续费](https://github.com/UCloudDoc-Team/umarketplace/buy/renew.md)
-   - [退费](https://github.com/UCloudDoc-Team/umarketplace/buy/refund)
+   - [计费说明](/buy/charge.md)
+   - [配置变更](/buy/configuration.md)
+   - [续费](/buy/renew.md)
+   - [退费](/buy/refund.md)
 - 快速上手
-   - [购买镜像](https://github.com/UCloudDoc-Team/umarketplace/fast/purchaseimage.md)
+   - [购买镜像](/fast/purchaseimage.md)
 - 操作指南
-   - [买家相关](https://github.com/UCloudDoc-Team/umarketplace/fast/buyerinfo.md)
-   - [服务商相关](https://github.com/UCloudDoc-Team/umarketplace/fast/sellerinfo.md)
-- [FAQ](https://github.com/UCloudDoc-Team/umarketplace/support/faqs.md)
+   - [买家相关](/guide/buyerinfo.md)
+   - [服务商相关](/guide/sellerinfo.md)
+- [FAQ](/support/faqs.md)
