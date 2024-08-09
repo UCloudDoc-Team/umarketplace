@@ -1,18 +1,18 @@
-- [概览](README.md)
+- [概览](/umarketplace/README.md)
 - 产品动态
 - 产品简介
-   - [什么是云市场](description/concept.md)
-   - [基础概念](description/glossary.md)
-   - [产品价值](description/adwantages.md)
-   - [商品列表](description/product_list.md)
+   - [什么是云市场](/umarketplace/description/concept.md)
+   - [基础概念](/umarketplace/description/glossary.md)
+   - [产品价值](/umarketplace/description/adwantages.md)
+   - [商品列表](/umarketplace/description/product_list.md)
 - 产品价格
-   - [计费说明](buy/charge.md)
-   - [配置变更](buy/configuration.md)
-   - [续费](buy/renew.md)
-   - [退费](buy/refund.md)
+   - [计费说明](/umarketplace/buy/charge.md)
+   - [配置变更](/umarketplace/buy/configuration.md)
+   - [续费](/umarketplace/buy/renew.md)
+   - [退费](/umarketplace/buy/refund.md)
 - 快速上手
-   - [购买镜像](fast/purchaseimage.md)
+   - [购买镜像](/umarketplace/fast/purchaseimage.md)
 - 操作指南
-   - [用户相关](guide/buyerinfo.md)
-   - [服务商相关](guide/sellerinfo.md)
-- [FAQ](support/faqs.md)
+   - [用户相关](/umarketplace/guide/buyerinfo.md)
+   - [服务商相关](/umarketplace/guide/sellerinfo.md)
+- [FAQ](/umarketplace/support/faqs.md)
