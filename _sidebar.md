@@ -3,7 +3,7 @@
 - 产品简介
    - [什么是云市场](/introduction/concept.md)
    - [基础概念](/introduction/glossary.md)
-   - [产品优势](/introduction/adwantages.md)
+   - [产品价值](/introduction/adwantages.md)
    - [商品列表](/introduction/product_list.md)
 - 产品价格
    - [计费说明](/buy/charge.md)
@@ -13,6 +13,6 @@
 - 快速上手
    - [购买镜像](/fast/purchaseimage.md)
 - 操作指南
-   - [买家相关](/guide/buyerinfo.md)
+   - [用户相关](/guide/buyerinfo.md)
    - [服务商相关](/guide/sellerinfo.md)
 - [FAQ](/support/faqs.md)
