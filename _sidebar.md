@@ -1,10 +1,10 @@
 - [概览](README.md)
 - 产品动态
 - 产品简介
-   - [什么是云市场](introduction/concept.md)
-   - [基础概念](introduction/glossary.md)
-   - [产品价值](introduction/adwantages.md)
-   - [商品列表](introduction/product_list.md)
+   - [什么是云市场](description/concept.md)
+   - [基础概念](description/glossary.md)
+   - [产品价值](description/adwantages.md)
+   - [商品列表](description/product_list.md)
 - 产品价格
    - [计费说明](buy/charge.md)
    - [配置变更](buy/configuration.md)
