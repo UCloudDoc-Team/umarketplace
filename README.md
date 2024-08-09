@@ -1,10 +1,10 @@
 # 概览
 - 产品动态
 - 产品简介
-   - [什么是云市场](/umarketplace/introduction/concept.md)
-   - [基础概念](/umarketplace/introduction/glossary.md)
-   - [产品价值](/umarketplace/introduction/adwantages.md)
-   - [商品列表](/umarketplace/introduction/product_list.md)
+   - [什么是云市场](/umarketplace/description/concept.md)
+   - [基础概念](/umarketplace/description/glossary.md)
+   - [产品价值](/umarketplace/description/adwantages.md)
+   - [商品列表](/umarketplace/description/product_list.md)
 - 产品价格
    - [计费说明](/umarketplace/buy/charge.md)
    - [配置变更](/umarketplace/buy/configuration.md)
