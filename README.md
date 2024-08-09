@@ -14,5 +14,12 @@
    - [购买镜像](/fast/purchaseimage.md)
 - 操作指南
    - [用户相关](/guide/buyerinfo.md)
+      - [购买镜像](/guide/buyerinfo.md#购买镜像)
+      - [续费镜像](/guide/buyerinfo.md#续费镜像)
+      - [配置变更](/guide/buyerinfo.md#配置变更)
+      - [删除退费](/guide/buyerinfo.md#删除退费)
+      - [发票引导](/guide/buyerinfo.md#发票引导)
    - [服务商相关](/guide/sellerinfo.md)
+      - [入驻流程](/guide/sellerinfo.md#入驻流程)
+      - [入驻步骤](/guide/sellerinfo.md#入驻步骤)
 - [FAQ](/support/faqs.md)
