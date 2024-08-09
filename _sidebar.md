@@ -1,5 +1,4 @@
 - [概览](README.md)
-- [概览](introduction/concept.md)
 - 产品动态
 - 产品简介
    - [什么是云市场](introduction/concept.md)
