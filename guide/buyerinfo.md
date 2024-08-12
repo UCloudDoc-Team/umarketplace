@@ -9,7 +9,7 @@
 - 您关闭了“自动续费”，资源即将或已经过期；
 - 您开启了“自动续费”，但账户余额不足，此时您已重新充值；<br />
 
-**step1.续费入口**<br />入口1：进入 [控制台云主机管理列表页](https://console.ucloud.cn/uhost/uhost?hpc=false&gpu=false)，找到对应资源，点击“更多”--选择“续费”<br />![](/umarketplace/images/%E7%BB%AD%E8%B4%B9%E5%85%A5%E5%8F%A3.png)<br />入口2：进入 [控制台财务中心续费管理模块](https://console.ucloud.cn/uaccount/batch_renew)，找到对应资源，点击“续费”。<br />![](/umarketplace/images/%E8%B4%A2%E5%8A%A1%E4%B8%AD%E5%BF%83.png)<br /><br />**step2.操作续费**<br />弹窗选择“付费时长”，确认待续费资源，即主机及关联付费镜像服务，点击“确认”。 <br />![](/umarketplace/images/%E7%BB%AD%E8%B4%B9%E6%97%B6%E9%95%BF.png) <br />
+**step1.续费入口**<br />入口1：进入 [控制台云主机管理列表页](https://console.ucloud.cn/uhost/uhost?hpc=false&gpu=false)，找到对应资源，点击“更多”--选择“续费”<br />![](/umarketplaceimages/续费入口.png)<br />入口2：进入 [控制台财务中心续费管理模块](https://console.ucloud.cn/uaccount/batch_renew)，找到对应资源，点击“续费”。<br />![](/umarketplace/images/财务中心.png)<br /><br />**step2.操作续费**<br />弹窗选择“付费时长”，确认待续费资源，即主机及关联付费镜像服务，点击“确认”。 <br />![](/umarketplace/images/续费时长.png) <br />
 <a name="J8KFH"></a>
 ## 配置变更
 主机的配置变更与镜像无关，镜像不支持变更配置。主机的升降级配置请参考 [更改规格](https://docs.ucloud.cn/uhost/guide/common?id=%e6%9b%b4%e6%94%b9%e8%a7%84%e6%a0%bc) 。
