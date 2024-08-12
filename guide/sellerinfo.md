@@ -151,7 +151,8 @@ EOFecho 'softdep mlx5_core pre: virtio_net' > /etc/modprobe.d/mlx5.conf
 ```
 ps -ef|grep auditd|grep -v  grep |grep -v '\['
 ```
-**清理系统**<br />下面的文件有可能不存在，如果不存在可以忽略
+**清理系统** <br />
+>下面的文件有可能不存在，如果不存在可以忽略
 ```
 rm -f /etc/default/grub.d/50-cloudimg-settings.cfg 
 rm -f /etc/netplan/50-cloud-init.yaml 
