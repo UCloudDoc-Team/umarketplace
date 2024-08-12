@@ -23,8 +23,7 @@
 #### 4.1 基于云平台制作 Linux 镜像
 **step1 创建主机**<br />在控制台 [console.ucloud.cn](https://console.ucloud.cn/uhost/uhost?hpc=false&gpu=false) 创建主机，主机选择不要挂载数据盘。
 
-**step2 进入主机部署业务**<br />对于从UCLOUD控制台上的Linux基础镜像制作镜像，为了保证镜像的正常使用，在部署自己业务时需要满足以下要求：
-
+**step2 进入主机部署业务**<br />对于从 UCloud 控制台上的Linux基础镜像制作镜像，为了保证镜像的正常使用，在部署自己业务时需要满足以下要求：
 - 安装监控 Agent ，详情请参见 [监控代理](https://docs.ucloud.cn/umon/agent) 。 
 - 检查 auditd 进程正常运行。auditd是Linux 审计框架（Linux Audit Framework）的一部分，用于实现系统审计功能。auditd进程负责收集、存储和分析系统的各种事件和日志，以便管理员监视系统的活动并检查安全性问题。
 ```
@@ -55,7 +54,7 @@ ps -ef|grep auditd|grep -v  grep |grep -v '\['
 #### 4.2 基于云平台制作 Windows 镜像
 **step1 创建主机**<br />在控制台 [console.ucloud.cn](https://console.ucloud.cn/uhost/uhost?hpc=false&gpu=false) 创建主机，主机选择不要挂载数据盘。<br />
 
-**step2 进入主机部署业务**<br />对于从UCLOUD控制台上的Windows基础镜像制作镜像，为了保证镜像的正常使用，在部署自己业务时需要满足以下要求：
+**step2 进入主机部署业务**<br />对于从 UCloud 控制台上的Windows基础镜像制作镜像，为了保证镜像的正常使用，在部署自己业务时需要满足以下要求：
 - 安装监控 Agent ，详情请参见 [监控代理](https://docs.ucloud.cn/umon/agent) 。 
 - 不可删除cloudbase-init软件包及其相关服务(如果没有的话可以忽略)。
 - 业务不要强依赖`IP`/`主机名`/`mac地址`等动态信息，因为这些信息在创建新主机时会进行更新。
@@ -74,12 +73,12 @@ Set-Content -Path "C:\Program Files\Cloudbase Solutions\Cloudbase-Init\log\cloud
 <a name="pVQ84"></a>
 
 #### 4.3 本地制作 Linux 镜像要求
-**磁盘要求**<br />您在制作云市场镜像过程中对磁盘分区时，需满足如下要求。
+**磁盘要求**<br />您在制作云市场镜像过程中对磁盘分区时，需满足如下要求：
 
 - `SWAP`分区 制作镜像时不要使用`SWAP`分区（交换分区）。
 - 磁盘大小 系统磁盘最小大小设置为20 GiB。
 
-如果您是使用本地的`KVM`虚拟机来制作镜像，建议虚拟机使用以下配置
+如果您是使用本地的`KVM`虚拟机来制作镜像，建议虚拟机使用以下配置：
 
 - 磁盘总线 使用`virtio`驱动作为磁盘的总线。
 - 磁盘格式 使用`Qcow2`格式作为磁盘格式。
@@ -94,7 +93,6 @@ Set-Content -Path "C:\Program Files\Cloudbase Solutions\Cloudbase-Init\log\cloud
 **系统配置**
 
 - 关闭`Firewalld`服务
-
 > 该项在Ubuntu22.04和Ubuntu24.04系统中是必做的
 ```
 systemctl stop firewalld
