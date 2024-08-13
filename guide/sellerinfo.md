@@ -87,8 +87,25 @@ Set-Content -Path "C:\Program Files\Cloudbase Solutions\Cloudbase-Init\log\cloud
 
 - `virtio`驱动 确保系统已经包含virtio驱动，可以使用命令`lsmod | grep virtio`来判断是是否加载了该模块。
 - `net_failover` 如果要制作快杰镜像需要内核要等于或者大于`4.19`，确保含有`net_failover`驱动，可以使用命令`lsmod | grep net_failover` 来判断是是否加载了该模块。
-- `cloud-init` 您在制作云市场镜像时需要安装`cloud-init`，以保证运行该镜像的实例能成功完成初始化配置。`cloud-init` 不可以使用社区版，需要使用`UCloud版本`。下载链接
 - `tzdata-legacy` 如果是`Ubuntu24.04`系统，需要安装`tzdata-legacy`来添加旧的时区信息到系统中。
+- `cloud-init` 您在制作云市场镜像时需要安装`cloud-init`，以保证运行该镜像的实例能成功完成初始化配置。`cloud-init` 不可以使用社区版，需要使用`UCloud版本`。
+
+**cloud-init下载链接**
+
+| OS | package |
+| --- | --- |
+| **Rocky 9** | [cloud-init-23.4-7.el9.5.0.1.ucloud.noarch.rpm](https://uhost.cn-bj.ufileos.com/cloud-init/Rocky9.x/cloud-init-23.4-7.el9.5.0.1.ucloud.noarch.rpm) |
+| **Rocky 8** | [cloud-init-23.4-7.el8.3.0.1.ucloud.noarch.rpm](https://uhost.cn-bj.ufileos.com/cloud-init/Rocky8.x/cloud-init-23.4-7.el8.3.0.1.ucloud.noarch.rpm) |
+| **Redhat 8** | [cloud-init-23.4-7.el8.3.ucloud.noarch.rpm](https://uhost.cn-bj.ufileos.com/cloud-init/Redhat8/cloud-init-23.4-7.el8.3.ucloud.noarch.rpm) |
+| **Ubuntu 20.04** | [cloud-init_24.1.3-1ubuntu1~20.04.5ucloud_all.deb](https://uhost.cn-bj.ufileos.com/cloud-init/Ubuntu20.04/cloud-init_24.1.3-1ubuntu1~20.04.5ucloud_all.deb) |
+| **Ubuntu 22.04** | [cloud-init_24.1.3-1ubuntu2~22.04.5ucloud_all.deb](https://uhost.cn-bj.ufileos.com/cloud-init/Ubuntu22.04/cloud-init_24.1.3-1ubuntu2~22.04.5ucloud_all.deb) |
+| **Ubuntu 24.04** | [cloud-init_24.1.3-0ubuntu3.3ucloud_all.deb](https://uhost.cn-bj.ufileos.com/cloud-init/Ubuntu24.04/cloud-init_24.1.3-0ubuntu3.3ucloud_all.deb) |
+| **CentOS Stream 9** | [cloud-init-23.4-17.el9.ucloud.noarch.rpm](https://uhost.cn-bj.ufileos.com/cloud-init/centos-stream9/cloud-init-23.4-17.el9.ucloud.noarch.rpm) |
+| **CentOS 8.x** | [cloud-init-22.1-8.el8.ucloud.noarch.rpm](https://uhost.cn-bj.ufileos.com/cloud-init/CentOS8.x/cloud-init-22.1-8.el8.ucloud.noarch.rpm) |
+| **CentOS 7.x** | [cloud-init-19.4-7.el7.7.ucloud.x86_64.rpm](https://uhost.cn-bj.ufileos.com/cloud-init/CentOS7/cloud-init-19.4-7.el7.7.ucloud.x86_64.rpm) |
+| **CentOS 6.x** | [cloud-init-19.4+11.g158c661c-1.el6.noarch.rpm](https://uhost.cn-bj.ufileos.com/cloud-init/CentOS6/cloud-init-19.4%2B11.g158c661c-1.el6.noarch.rpm) |
+
+<a name="qPirL"></a>
 
 **系统配置**
 
@@ -158,22 +175,7 @@ rm -f /etc/sysctl.d/99-cloudimg-ipv6.conf
 ```
 发布镜像前，您可以根据自己本身情况进行清理历史记录以及日志等操作。<br />
 
-**cloud-init下载链接**
 
-| OS | package |
-| --- | --- |
-| **Rocky 9** | [cloud-init-23.4-7.el9.5.0.1.ucloud.noarch.rpm](https://uhost.cn-bj.ufileos.com/cloud-init/Rocky9.x/cloud-init-23.4-7.el9.5.0.1.ucloud.noarch.rpm) |
-| **Rocky 8** | [cloud-init-23.4-7.el8.3.0.1.ucloud.noarch.rpm](https://uhost.cn-bj.ufileos.com/cloud-init/Rocky8.x/cloud-init-23.4-7.el8.3.0.1.ucloud.noarch.rpm) |
-| **Redhat 8** | [cloud-init-23.4-7.el8.3.ucloud.noarch.rpm](https://uhost.cn-bj.ufileos.com/cloud-init/Redhat8/cloud-init-23.4-7.el8.3.ucloud.noarch.rpm) |
-| **Ubuntu 20.04** | [cloud-init_24.1.3-1ubuntu1~20.04.5ucloud_all.deb](https://uhost.cn-bj.ufileos.com/cloud-init/Ubuntu20.04/cloud-init_24.1.3-1ubuntu1~20.04.5ucloud_all.deb) |
-| **Ubuntu 22.04** | [cloud-init_24.1.3-1ubuntu2~22.04.5ucloud_all.deb](https://uhost.cn-bj.ufileos.com/cloud-init/Ubuntu22.04/cloud-init_24.1.3-1ubuntu2~22.04.5ucloud_all.deb) |
-| **Ubuntu 24.04** | [cloud-init_24.1.3-0ubuntu3.3ucloud_all.deb](https://uhost.cn-bj.ufileos.com/cloud-init/Ubuntu24.04/cloud-init_24.1.3-0ubuntu3.3ucloud_all.deb) |
-| **CentOS Stream 9** | [cloud-init-23.4-17.el9.ucloud.noarch.rpm](https://uhost.cn-bj.ufileos.com/cloud-init/centos-stream9/cloud-init-23.4-17.el9.ucloud.noarch.rpm) |
-| **CentOS 8.x** | [cloud-init-22.1-8.el8.ucloud.noarch.rpm](https://uhost.cn-bj.ufileos.com/cloud-init/CentOS8.x/cloud-init-22.1-8.el8.ucloud.noarch.rpm) |
-| **CentOS 7.x** | [cloud-init-19.4-7.el7.7.ucloud.x86_64.rpm](https://uhost.cn-bj.ufileos.com/cloud-init/CentOS7/cloud-init-19.4-7.el7.7.ucloud.x86_64.rpm) |
-| **CentOS 6.x** | [cloud-init-19.4+11.g158c661c-1.el6.noarch.rpm](https://uhost.cn-bj.ufileos.com/cloud-init/CentOS6/cloud-init-19.4%2B11.g158c661c-1.el6.noarch.rpm) |
-
-<a name="qPirL"></a>
 
 #### 4.4 本地制作 Windows 镜像要求
 **磁盘要求**<br />您在制作云市场镜像过程中对磁盘分区时，需满足如下要求。
@@ -198,7 +200,7 @@ rm -f /etc/sysctl.d/99-cloudimg-ipv6.conf
 - 远程桌面 开启系统的远程桌面功能。
 - 防火墙 建议关闭所有防火墙。
 - 安装安全补丁更新 建议您安装最新的安全补丁。
-- 账户策略 查看`控制面板`->`系统和安全`->`管理工具`->`本地安全策略`->`账户策略`->`账户锁定策略`->`账户锁定阀值` 如果该值不为0的话，需要将该值设置为0
+- 账户策略 查看`控制面板`->`系统和安全`->`管理工具`->`本地安全策略`->`账户策略`->`账户锁定策略`->`账户锁定阀值` 如果该值不为0的话，需要将该值设置为0。
 
 **清理镜像信息**<br />为了提高系统的安全性，在镜像发布前，建议您清理镜像制作过程中的日志、历史记录、残留文件等，尽可能减小镜像的大小。
 
