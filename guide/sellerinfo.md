@@ -95,7 +95,7 @@ Set-Content -Path "C:\Program Files\Cloudbase Solutions\Cloudbase-Init\log\cloud
 - `tzdata-legacy`<br />
   如果是`Ubuntu24.04`系统，需要安装`tzdata-legacy`来添加旧的时区信息到系统中。
 - `cloud-init`<br />
-  您在制作云市场镜像时需要安装`cloud-init`，以保证运行该镜像的实例能成功完成初始化配置。`cloud-init` 不可以使用社区版，需要使用`UCloud版本`，[cloudbase-init](/umarketplace/guide/sellerinfo.md#cloud-init下载链接)。
+  您在制作云市场镜像时需要安装`cloud-init`，以保证运行该镜像的实例能成功完成初始化配置。`cloud-init` 不可以使用社区版，需要使用`UCloud版本`，下载地址：[cloudbase-init](/umarketplace/guide/sellerinfo.md#cloud-init下载链接)。
 
 
 ##### 系统配置
