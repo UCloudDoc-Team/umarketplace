@@ -91,7 +91,7 @@ Set-Content -Path "C:\Program Files\Cloudbase Solutions\Cloudbase-Init\log\cloud
 - `virtio`驱动 确保系统已经包含virtio驱动，可以使用命令`lsmod | grep virtio`来判断是是否加载了该模块。
 - `net_failover` 如果要制作快杰镜像需要内核要等于或者大于`4.19`，确保含有`net_failover`驱动，可以使用命令`lsmod | grep net_failover` 来判断是是否加载了该模块。
 - `tzdata-legacy` 如果是`Ubuntu24.04`系统，需要安装`tzdata-legacy`来添加旧的时区信息到系统中。
-- `cloud-init` 您在制作云市场镜像时需要安装`cloud-init`，以保证运行该镜像的实例能成功完成初始化配置。`cloud-init` 不可以使用社区版，需要使用`UCloud版本`，[下载链接]()。
+- `cloud-init` 您在制作云市场镜像时需要安装`cloud-init`，以保证运行该镜像的实例能成功完成初始化配置。`cloud-init` 不可以使用社区版，需要使用`UCloud版本`，[cloudbase-init](/umarketplace/guide/sellerinfo.md#cloud-init下载链接)。
 
 
 ##### 系统配置
@@ -194,7 +194,7 @@ rm -f /etc/sysctl.d/99-cloudimg-ipv6.conf
 ##### 必备的软件和工具
 
 - `virtio`驱动 `windows`必须安装`virtio`驱动，其中网络和磁盘的驱动必须安装，`virtio` 驱动可以从 [fedorapeople](https://fedorapeople.org/groups/virt/virtio-win/direct-downloads/archive-virtio/) 上进行下载，建议`Windows Server 2012`及以下使用`0.1.164`版本，`Windows Server 2012`以上使用`0.1.229`版本。
-- `cloudbase-init``Windows Server 2016`及以上可以使用`cloudbase-init` 来进行初始化，下载地址：[cloudbase-init](https://uhost.cn-bj.ufileos.com/cloud-init/Windows/CloudbaseInitSetup.msi)
+- `cloudbase-init``Windows Server 2016`及以上可以使用`cloudbase-init` 来进行初始化，下载地址：[cloudbase-init](/umarketplace/guide/sellerinfo.md#cloud-init下载链接)
 
 ##### 系统配置
 
