@@ -106,9 +106,8 @@ systemctl stop firewalld
 systemctl disable firewalld
 ```
 
-- 配置网络
-
-如果是使用NetworkManager来管理网络需要进行如下配置。
+- 配置网络<br />
+  如果是使用NetworkManager来管理网络需要进行如下配置。
 ```
 cat > /usr/lib/NetworkManager/conf.d/00-server.conf << EOF
 This configuration file changes NetworkManager's behavior to
