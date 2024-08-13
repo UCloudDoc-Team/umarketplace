@@ -21,9 +21,11 @@
 请根据制作镜像的环境不同，选择相应的指导文档。<br />
 
 #### 4.1 基于云平台制作 Linux 镜像
-**step1 创建主机**<br />在控制台 [console.ucloud.cn](https://console.ucloud.cn/uhost/uhost?hpc=false&gpu=false) 创建主机，主机选择不要挂载数据盘。
+##### step1 创建主机
+在控制台 [console.ucloud.cn](https://console.ucloud.cn/uhost/uhost?hpc=false&gpu=false) 创建主机，主机选择不要挂载数据盘。
 
-**step2 进入主机部署业务**<br />对于从 UCloud 控制台上的Linux基础镜像制作镜像，为了保证镜像的正常使用，在部署自己业务时需要满足以下要求：
+##### step2 进入主机部署业务
+对于从 UCloud 控制台上的Linux基础镜像制作镜像，为了保证镜像的正常使用，在部署自己业务时需要满足以下要求：
 - 安装监控 Agent ，详情请参见 [监控代理](https://docs.ucloud.cn/umon/agent) 。 
 - 检查 auditd 进程正常运行。auditd是Linux 审计框架（Linux Audit Framework）的一部分，用于实现系统审计功能。auditd进程负责收集、存储和分析系统的各种事件和日志，以便管理员监视系统的活动并检查安全性问题。
 ```
@@ -43,8 +45,7 @@ ps -ef|grep auditd|grep -v  grep |grep -v '\['
    - /usr/lib/systemd/network/99-default.link
    - /usr/lib/NetworkManager/conf.d/00-server.conf
 
-**step3 清理系统**
-
+##### step3 清理系统
 - 执行`cloud-init clean`命令清理本实例的初始化数据。
 - 执行`rm ``-f /usr/local/ucl``oud/.cache/metadata.json`，清理`cloud-init`缓存的数据。
 - 检查`/etc/hosts`中的内容，清理主机名。
@@ -52,9 +53,11 @@ ps -ef|grep auditd|grep -v  grep |grep -v '\['
 <a name="ybRrB"></a>
 
 #### 4.2 基于云平台制作 Windows 镜像
-**step1 创建主机**<br />在控制台 [console.ucloud.cn](https://console.ucloud.cn/uhost/uhost?hpc=false&gpu=false) 创建主机，主机选择不要挂载数据盘。<br />
+##### step1 创建主机
+在控制台 [console.ucloud.cn](https://console.ucloud.cn/uhost/uhost?hpc=false&gpu=false) 创建主机，主机选择不要挂载数据盘。<br />
 
-**step2 进入主机部署业务**<br />对于从 UCloud 控制台上的Windows基础镜像制作镜像，为了保证镜像的正常使用，在部署自己业务时需要满足以下要求：
+##### step2 进入主机部署业务
+对于从 UCloud 控制台上的Windows基础镜像制作镜像，为了保证镜像的正常使用，在部署自己业务时需要满足以下要求：
 - 安装监控 Agent ，详情请参见 [监控代理](https://docs.ucloud.cn/umon/agent) 。 
 - 不可删除cloudbase-init软件包及其相关服务(如果没有的话可以忽略)。
 - 业务不要强依赖`IP`/`主机名`/`mac地址`等动态信息，因为这些信息在创建新主机时会进行更新。
@@ -62,7 +65,7 @@ ps -ef|grep auditd|grep -v  grep |grep -v '\['
 - 不建议修改以下文件夹中的内容(如果不存在可以忽略)：
    - C:\Program Files\Cloudbase Solutions
 
-**step3 清理系统**
+##### step3 清理系统
 - 清理`Cloudbase-init`相关(如果不存在可以忽略),在`PowerShell`中执行
 ```
 Remove-Item -Path "HKLM:\SOFTWARE\Cloudbase Solutions\Cloudbase-Init" -Recurse -Force
@@ -73,7 +76,8 @@ Set-Content -Path "C:\Program Files\Cloudbase Solutions\Cloudbase-Init\log\cloud
 <a name="pVQ84"></a>
 
 #### 4.3 本地制作 Linux 镜像要求
-**磁盘要求**<br />您在制作云市场镜像过程中对磁盘分区时，需满足如下要求：
+##### 磁盘要求
+您在制作云市场镜像过程中对磁盘分区时，需满足如下要求：
 
 - `SWAP`分区 制作镜像时不要使用`SWAP`分区（交换分区）。
 - 磁盘大小 系统磁盘最小大小设置为20 GiB。
@@ -83,32 +87,14 @@ Set-Content -Path "C:\Program Files\Cloudbase Solutions\Cloudbase-Init\log\cloud
 - 磁盘总线 使用`virtio`驱动作为磁盘的总线。
 - 磁盘格式 使用`Qcow2`格式作为磁盘格式。
 
-**必备的软件和工具**
-
+##### 必备的软件和工具
 - `virtio`驱动 确保系统已经包含virtio驱动，可以使用命令`lsmod | grep virtio`来判断是是否加载了该模块。
 - `net_failover` 如果要制作快杰镜像需要内核要等于或者大于`4.19`，确保含有`net_failover`驱动，可以使用命令`lsmod | grep net_failover` 来判断是是否加载了该模块。
 - `tzdata-legacy` 如果是`Ubuntu24.04`系统，需要安装`tzdata-legacy`来添加旧的时区信息到系统中。
-- `cloud-init` 您在制作云市场镜像时需要安装`cloud-init`，以保证运行该镜像的实例能成功完成初始化配置。`cloud-init` 不可以使用社区版，需要使用`UCloud版本`。
+- `cloud-init` 您在制作云市场镜像时需要安装`cloud-init`，以保证运行该镜像的实例能成功完成初始化配置。`cloud-init` 不可以使用社区版，需要使用`UCloud版本`，[下载链接]()。
 
-**cloud-init下载链接**
 
-| OS | package |
-| --- | --- |
-| **Rocky 9** | [cloud-init-23.4-7.el9.5.0.1.ucloud.noarch.rpm](https://uhost.cn-bj.ufileos.com/cloud-init/Rocky9.x/cloud-init-23.4-7.el9.5.0.1.ucloud.noarch.rpm) |
-| **Rocky 8** | [cloud-init-23.4-7.el8.3.0.1.ucloud.noarch.rpm](https://uhost.cn-bj.ufileos.com/cloud-init/Rocky8.x/cloud-init-23.4-7.el8.3.0.1.ucloud.noarch.rpm) |
-| **Redhat 8** | [cloud-init-23.4-7.el8.3.ucloud.noarch.rpm](https://uhost.cn-bj.ufileos.com/cloud-init/Redhat8/cloud-init-23.4-7.el8.3.ucloud.noarch.rpm) |
-| **Ubuntu 20.04** | [cloud-init_24.1.3-1ubuntu1~20.04.5ucloud_all.deb](https://uhost.cn-bj.ufileos.com/cloud-init/Ubuntu20.04/cloud-init_24.1.3-1ubuntu1~20.04.5ucloud_all.deb) |
-| **Ubuntu 22.04** | [cloud-init_24.1.3-1ubuntu2~22.04.5ucloud_all.deb](https://uhost.cn-bj.ufileos.com/cloud-init/Ubuntu22.04/cloud-init_24.1.3-1ubuntu2~22.04.5ucloud_all.deb) |
-| **Ubuntu 24.04** | [cloud-init_24.1.3-0ubuntu3.3ucloud_all.deb](https://uhost.cn-bj.ufileos.com/cloud-init/Ubuntu24.04/cloud-init_24.1.3-0ubuntu3.3ucloud_all.deb) |
-| **CentOS Stream 9** | [cloud-init-23.4-17.el9.ucloud.noarch.rpm](https://uhost.cn-bj.ufileos.com/cloud-init/centos-stream9/cloud-init-23.4-17.el9.ucloud.noarch.rpm) |
-| **CentOS 8.x** | [cloud-init-22.1-8.el8.ucloud.noarch.rpm](https://uhost.cn-bj.ufileos.com/cloud-init/CentOS8.x/cloud-init-22.1-8.el8.ucloud.noarch.rpm) |
-| **CentOS 7.x** | [cloud-init-19.4-7.el7.7.ucloud.x86_64.rpm](https://uhost.cn-bj.ufileos.com/cloud-init/CentOS7/cloud-init-19.4-7.el7.7.ucloud.x86_64.rpm) |
-| **CentOS 6.x** | [cloud-init-19.4+11.g158c661c-1.el6.noarch.rpm](https://uhost.cn-bj.ufileos.com/cloud-init/CentOS6/cloud-init-19.4%2B11.g158c661c-1.el6.noarch.rpm) |
-
-<a name="qPirL"></a>
-
-**系统配置**
-
+##### 系统配置
 - 关闭`Firewalld`服务
 > 该项在Ubuntu22.04和Ubuntu24.04系统中是必做的
 ```
@@ -166,7 +152,7 @@ EOFecho 'softdep mlx5_core pre: virtio_net' > /etc/modprobe.d/mlx5.conf
 ```
 ps -ef|grep auditd|grep -v  grep |grep -v '\['
 ```
-**清理系统**
+##### 清理系统
 >下面的文件有可能不存在，如果不存在可以忽略
 ```
 rm -f /etc/default/grub.d/50-cloudimg-settings.cfg 
@@ -175,10 +161,26 @@ rm -f /etc/sysctl.d/99-cloudimg-ipv6.conf
 ```
 发布镜像前，您可以根据自己本身情况进行清理历史记录以及日志等操作。<br />
 
+##### cloud-init下载链接
 
+| OS | package |
+| --- | --- |
+| **Rocky 9** | [cloud-init-23.4-7.el9.5.0.1.ucloud.noarch.rpm](https://uhost.cn-bj.ufileos.com/cloud-init/Rocky9.x/cloud-init-23.4-7.el9.5.0.1.ucloud.noarch.rpm) |
+| **Rocky 8** | [cloud-init-23.4-7.el8.3.0.1.ucloud.noarch.rpm](https://uhost.cn-bj.ufileos.com/cloud-init/Rocky8.x/cloud-init-23.4-7.el8.3.0.1.ucloud.noarch.rpm) |
+| **Redhat 8** | [cloud-init-23.4-7.el8.3.ucloud.noarch.rpm](https://uhost.cn-bj.ufileos.com/cloud-init/Redhat8/cloud-init-23.4-7.el8.3.ucloud.noarch.rpm) |
+| **Ubuntu 20.04** | [cloud-init_24.1.3-1ubuntu1~20.04.5ucloud_all.deb](https://uhost.cn-bj.ufileos.com/cloud-init/Ubuntu20.04/cloud-init_24.1.3-1ubuntu1~20.04.5ucloud_all.deb) |
+| **Ubuntu 22.04** | [cloud-init_24.1.3-1ubuntu2~22.04.5ucloud_all.deb](https://uhost.cn-bj.ufileos.com/cloud-init/Ubuntu22.04/cloud-init_24.1.3-1ubuntu2~22.04.5ucloud_all.deb) |
+| **Ubuntu 24.04** | [cloud-init_24.1.3-0ubuntu3.3ucloud_all.deb](https://uhost.cn-bj.ufileos.com/cloud-init/Ubuntu24.04/cloud-init_24.1.3-0ubuntu3.3ucloud_all.deb) |
+| **CentOS Stream 9** | [cloud-init-23.4-17.el9.ucloud.noarch.rpm](https://uhost.cn-bj.ufileos.com/cloud-init/centos-stream9/cloud-init-23.4-17.el9.ucloud.noarch.rpm) |
+| **CentOS 8.x** | [cloud-init-22.1-8.el8.ucloud.noarch.rpm](https://uhost.cn-bj.ufileos.com/cloud-init/CentOS8.x/cloud-init-22.1-8.el8.ucloud.noarch.rpm) |
+| **CentOS 7.x** | [cloud-init-19.4-7.el7.7.ucloud.x86_64.rpm](https://uhost.cn-bj.ufileos.com/cloud-init/CentOS7/cloud-init-19.4-7.el7.7.ucloud.x86_64.rpm) |
+| **CentOS 6.x** | [cloud-init-19.4+11.g158c661c-1.el6.noarch.rpm](https://uhost.cn-bj.ufileos.com/cloud-init/CentOS6/cloud-init-19.4%2B11.g158c661c-1.el6.noarch.rpm) |
+
+<a name="qPirL"></a>
 
 #### 4.4 本地制作 Windows 镜像要求
-**磁盘要求**<br />您在制作云市场镜像过程中对磁盘分区时，需满足如下要求。
+##### 磁盘要求
+您在制作云市场镜像过程中对磁盘分区时，需满足如下要求。
 
 - 启动模式 建议使用BIOS模式进行启动，对于UEFI启动模式的镜像需要联系技术支持团队进行特殊处理。
 - 磁盘分区 对于启动分区，如果有必须位于磁盘最前端，磁盘尾部为windows系统分区(C盘)，如果在系统分区后面还有其他分区需要全部删除，并且将系统分区拓展到尾部。
@@ -189,12 +191,12 @@ rm -f /etc/sysctl.d/99-cloudimg-ipv6.conf
 - 磁盘总线 使用`virtio`驱动作为磁盘的总线。
 - 磁盘格式 使用`Qcow2`格式作为磁盘格式。
 
-**必备的软件和工具**
+##### 必备的软件和工具
 
 - `virtio`驱动 `windows`必须安装`virtio`驱动，其中网络和磁盘的驱动必须安装，`virtio` 驱动可以从 [fedorapeople](https://fedorapeople.org/groups/virt/virtio-win/direct-downloads/archive-virtio/) 上进行下载，建议`Windows Server 2012`及以下使用`0.1.164`版本，`Windows Server 2012`以上使用`0.1.229`版本。
 - `cloudbase-init``Windows Server 2016`及以上可以使用`cloudbase-init` 来进行初始化，下载地址：[cloudbase-init](https://uhost.cn-bj.ufileos.com/cloud-init/Windows/CloudbaseInitSetup.msi)
 
-**系统配置**
+##### 系统配置
 
 - `BootScript` 对于没有安装`cloudbase-init` 的系统，需要使用预埋启动脚本的形式来初始化系统，在`运行`-->`gpedit.msc`-->`计算机配置`-->`Windows设置`-->`脚本`-->`启动`-->`添加` 中的脚本名中添加`C:\bootstrap.bat`。
 - 远程桌面 开启系统的远程桌面功能。
@@ -202,8 +204,8 @@ rm -f /etc/sysctl.d/99-cloudimg-ipv6.conf
 - 安装安全补丁更新 建议您安装最新的安全补丁。
 - 账户策略 查看`控制面板`->`系统和安全`->`管理工具`->`本地安全策略`->`账户策略`->`账户锁定策略`->`账户锁定阀值` 如果该值不为0的话，需要将该值设置为0。
 
-**清理镜像信息**<br />为了提高系统的安全性，在镜像发布前，建议您清理镜像制作过程中的日志、历史记录、残留文件等，尽可能减小镜像的大小。
-
+##### 清理镜像信息
+为了提高系统的安全性，在镜像发布前，建议您清理镜像制作过程中的日志、历史记录、残留文件等，尽可能减小镜像的大小。
 - 清理浏览器记录。
 - 清理Windows更新相关日志。
 - 清理事件记录。
