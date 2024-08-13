@@ -88,10 +88,14 @@ Set-Content -Path "C:\Program Files\Cloudbase Solutions\Cloudbase-Init\log\cloud
 - 磁盘格式 使用`Qcow2`格式作为磁盘格式。
 
 ##### 必备的软件和工具
-- `virtio`驱动 确保系统已经包含virtio驱动，可以使用命令`lsmod | grep virtio`来判断是是否加载了该模块。
-- `net_failover` 如果要制作快杰镜像需要内核要等于或者大于`4.19`，确保含有`net_failover`驱动，可以使用命令`lsmod | grep net_failover` 来判断是是否加载了该模块。
-- `tzdata-legacy` 如果是`Ubuntu24.04`系统，需要安装`tzdata-legacy`来添加旧的时区信息到系统中。
-- `cloud-init` 您在制作云市场镜像时需要安装`cloud-init`，以保证运行该镜像的实例能成功完成初始化配置。`cloud-init` 不可以使用社区版，需要使用`UCloud版本`，[cloudbase-init](/umarketplace/guide/sellerinfo.md#cloud-init下载链接)。
+- `virtio`驱动<br />
+  确保系统已经包含virtio驱动，可以使用命令`lsmod | grep virtio`来判断是是否加载了该模块。
+- `net_failover`<br />
+  如果要制作快杰镜像需要内核要等于或者大于`4.19`，确保含有`net_failover`驱动，可以使用命令`lsmod | grep net_failover` 来判断是是否加载了该模块。
+- `tzdata-legacy`<br />
+  如果是`Ubuntu24.04`系统，需要安装`tzdata-legacy`来添加旧的时区信息到系统中。
+- `cloud-init`<br />
+  您在制作云市场镜像时需要安装`cloud-init`，以保证运行该镜像的实例能成功完成初始化配置。`cloud-init` 不可以使用社区版，需要使用`UCloud版本`，[cloudbase-init](/umarketplace/guide/sellerinfo.md#cloud-init下载链接)。
 
 
 ##### 系统配置
@@ -103,6 +107,7 @@ systemctl disable firewalld
 ```
 
 - 配置网络
+
 如果是使用NetworkManager来管理网络需要进行如下配置。
 ```
 cat > /usr/lib/NetworkManager/conf.d/00-server.conf << EOF
@@ -152,6 +157,7 @@ EOFecho 'softdep mlx5_core pre: virtio_net' > /etc/modprobe.d/mlx5.conf
 ```
 ps -ef|grep auditd|grep -v  grep |grep -v '\['
 ```
+
 ##### 清理系统
 >下面的文件有可能不存在，如果不存在可以忽略
 ```
@@ -182,27 +188,37 @@ rm -f /etc/sysctl.d/99-cloudimg-ipv6.conf
 ##### 磁盘要求
 您在制作云市场镜像过程中对磁盘分区时，需满足如下要求。
 
-- 启动模式 建议使用BIOS模式进行启动，对于UEFI启动模式的镜像需要联系技术支持团队进行特殊处理。
-- 磁盘分区 对于启动分区，如果有必须位于磁盘最前端，磁盘尾部为windows系统分区(C盘)，如果在系统分区后面还有其他分区需要全部删除，并且将系统分区拓展到尾部。
-- 磁盘大小 系统磁盘最小大小设置为40 GiB或者以上。
+- 启动模式<br />
+  建议使用BIOS模式进行启动，对于UEFI启动模式的镜像需要联系技术支持团队进行特殊处理。
+- 磁盘分区<br />
+  对于启动分区，如果有必须位于磁盘最前端，磁盘尾部为windows系统分区(C盘)，如果在系统分区后面还有其他分区需要全部删除，并且将系统分区拓展到尾部。
+- 磁盘大小<br />
+  系统磁盘最小大小设置为40 GiB或者以上。
 
-如果您是使用本地的`KVM`虚拟机来制作镜像，建议虚拟机使用以下配置
+如果您是使用本地的`KVM`虚拟机来制作镜像，建议虚拟机使用以下配置：
 
 - 磁盘总线 使用`virtio`驱动作为磁盘的总线。
 - 磁盘格式 使用`Qcow2`格式作为磁盘格式。
 
 ##### 必备的软件和工具
 
-- `virtio`驱动 `windows`必须安装`virtio`驱动，其中网络和磁盘的驱动必须安装，`virtio` 驱动可以从 [fedorapeople](https://fedorapeople.org/groups/virt/virtio-win/direct-downloads/archive-virtio/) 上进行下载，建议`Windows Server 2012`及以下使用`0.1.164`版本，`Windows Server 2012`以上使用`0.1.229`版本。
-- `cloudbase-init``Windows Server 2016`及以上可以使用`cloudbase-init` 来进行初始化，下载地址：[cloudbase-init](/umarketplace/guide/sellerinfo.md#cloud-init下载链接)
+- `virtio`驱动<br />
+  `windows`必须安装`virtio`驱动，其中网络和磁盘的驱动必须安装，`virtio` 驱动可以从 [fedorapeople](https://fedorapeople.org/groups/virt/virtio-win/direct-downloads/archive-virtio/) 上进行下载，建议`Windows Server 2012`及以下使用`0.1.164`版本，`Windows Server 2012`以上使用`0.1.229`版本。
+- `cloudbase-init`<br />
+  `Windows Server 2016`及以上可以使用`cloudbase-init` 来进行初始化，下载地址：[cloudbase-init](/umarketplace/guide/sellerinfo.md#cloud-init下载链接)。
 
 ##### 系统配置
 
-- `BootScript` 对于没有安装`cloudbase-init` 的系统，需要使用预埋启动脚本的形式来初始化系统，在`运行`-->`gpedit.msc`-->`计算机配置`-->`Windows设置`-->`脚本`-->`启动`-->`添加` 中的脚本名中添加`C:\bootstrap.bat`。
-- 远程桌面 开启系统的远程桌面功能。
-- 防火墙 建议关闭所有防火墙。
-- 安装安全补丁更新 建议您安装最新的安全补丁。
-- 账户策略 查看`控制面板`->`系统和安全`->`管理工具`->`本地安全策略`->`账户策略`->`账户锁定策略`->`账户锁定阀值` 如果该值不为0的话，需要将该值设置为0。
+- `BootScript`<br />
+  对于没有安装`cloudbase-init` 的系统，需要使用预埋启动脚本的形式来初始化系统，在`运行`-->`gpedit.msc`-->`计算机配置`-->`Windows设置`-->`脚本`-->`启动`-->`添加` 中的脚本名中添加`C:\bootstrap.bat`。
+- 远程桌面<br />
+  开启系统的远程桌面功能。
+- 防火墙<br />
+  建议关闭所有防火墙。
+- 安装安全补丁更新<br />
+  建议您安装最新的安全补丁。
+- 账户策略<br />
+  查看`控制面板`->`系统和安全`->`管理工具`->`本地安全策略`->`账户策略`->`账户锁定策略`->`账户锁定阀值` 如果该值不为0的话，需要将该值设置为0。
 
 ##### 清理镜像信息
 为了提高系统的安全性，在镜像发布前，建议您清理镜像制作过程中的日志、历史记录、残留文件等，尽可能减小镜像的大小。
