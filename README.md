@@ -1,5 +1,4 @@
 # 概览
-- 产品动态
 - 产品简介
    - [什么是云市场](/umarketplace/description/concept.md)
    - [基础概念](/umarketplace/description/glossary.md)
