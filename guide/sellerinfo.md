@@ -53,7 +53,7 @@ ps -ef|grep auditd|grep -v  grep |grep -v '\['
 <a name="ybRrB"></a>
 
 ##### step4 制作镜像
-制作镜像请参考文档 [制作镜像](https://docs.ucloud.cn/uhost/guide/image/common?id=%e5%88%b6%e4%bd%9c%e9%95%9c%e5%83%8f)，请勿开启关联数据盘。
+请参考文档 [制作镜像](https://docs.ucloud.cn/uhost/guide/image/common?id=%e5%88%b6%e4%bd%9c%e9%95%9c%e5%83%8f)，请勿开启关联数据盘。
 
 #### 4.2 基于云平台制作 Windows 镜像
 ##### step1 创建主机
@@ -79,7 +79,7 @@ Set-Content -Path "C:\Program Files\Cloudbase Solutions\Cloudbase-Init\log\cloud
 <a name="pVQ84"></a>
 
 ##### step4 制作镜像
-制作镜像请参考文档 [制作镜像](https://docs.ucloud.cn/uhost/guide/image/common?id=%e5%88%b6%e4%bd%9c%e9%95%9c%e5%83%8f)，请勿开启关联数据盘。
+请参考文档 [制作镜像](https://docs.ucloud.cn/uhost/guide/image/common?id=%e5%88%b6%e4%bd%9c%e9%95%9c%e5%83%8f)，请勿开启关联数据盘。
 
 #### 4.3 本地制作 Linux 镜像要求
 ##### 磁盘要求
@@ -173,7 +173,7 @@ rm -f /etc/sysctl.d/99-cloudimg-ipv6.conf
 发布镜像前，您可以根据自己本身情况进行清理历史记录以及日志等操作。<br />
 
 ##### 上传镜像
-上传镜像请参考文档 [镜像上传](https://docs.ucloud.cn/uhost/guide/image/upload_image?id=%e9%95%9c%e5%83%8f%e4%b8%8a%e4%bc%a0)。
+请参考文档 [镜像上传](https://docs.ucloud.cn/uhost/guide/image/upload_image?id=%e9%95%9c%e5%83%8f%e4%b8%8a%e4%bc%a0)。
 
 ##### cloud-init下载链接
 
@@ -239,7 +239,7 @@ rm -f /etc/sysctl.d/99-cloudimg-ipv6.conf
 <a name="RkVtB"></a>
 
 ##### 上传镜像
-上传镜像请参考文档 [镜像上传](https://docs.ucloud.cn/uhost/guide/image/upload_image?id=%e9%95%9c%e5%83%8f%e4%b8%8a%e4%bc%a0)。
+请参考文档 [镜像上传](https://docs.ucloud.cn/uhost/guide/image/upload_image?id=%e9%95%9c%e5%83%8f%e4%b8%8a%e4%bc%a0)。
 
 ### 5. 提供产品信息
 | 类型 | 内容 |
